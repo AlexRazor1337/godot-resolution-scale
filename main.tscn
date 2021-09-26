@@ -67,9 +67,9 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="UI"]
 margin_left = 18.8775
-margin_top = 68.9028
-margin_right = 58.8775
-margin_bottom = 82.9028
+margin_top = 117.984
+margin_right = 127.878
+margin_bottom = 131.984
 text = "Resolution scale:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -77,9 +77,9 @@ __meta__ = {
 
 [node name="HSlider" type="HSlider" parent="UI"]
 margin_left = 17.0
-margin_top = 76.0
+margin_top = 125.081
 margin_right = 179.0
-margin_bottom = 104.0
+margin_bottom = 153.081
 value = 100.0
 script = ExtResource( 2 )
 __meta__ = {

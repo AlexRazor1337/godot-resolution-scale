@@ -2,4 +2,6 @@ extends Label
 
 
 func _process(delta):
-	self.text = "FPS: " + str(Engine.get_frames_per_second())
+	var text = " RES: " + str(get_node("../../ResolutionScaling").rect_size)
+	text += "\n RES: " + str(get_node("../../ResolutionScaling/Viewport").size)
+	self.text = text + "\n FPS: " + str(Engine.get_frames_per_second())
