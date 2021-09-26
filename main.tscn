@@ -54,11 +54,11 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="UI"]
-margin_left = 20.4811
-margin_top = 14.6295
-margin_right = 60.4811
-margin_bottom = 28.6295
-rect_scale = Vector2( 2, 2 )
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 60.0
+margin_bottom = 34.0
+rect_scale = Vector2( 1.5, 1.5 )
 text = "FPS:"
 script = ExtResource( 1 )
 __meta__ = {
@@ -66,9 +66,9 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="UI"]
-margin_left = 18.8775
+margin_left = 20.0
 margin_top = 117.984
-margin_right = 127.878
+margin_right = 129.0
 margin_bottom = 131.984
 text = "Resolution scale:"
 __meta__ = {

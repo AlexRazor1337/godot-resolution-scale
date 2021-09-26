@@ -3,9 +3,8 @@
 [ext_resource path="res://ResolutionScaling.gd" type="Script" id=1]
 
 [node name="ResolutionScaling" type="ViewportContainer"]
-margin_right = 1024.0
-margin_bottom = 600.0
-rect_min_size = Vector2( 1024, 600 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 stretch = true
 script = ExtResource( 1 )
 __meta__ = {
