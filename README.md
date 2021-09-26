@@ -1,7 +1,7 @@
 ## What is it?
 It allows to lower resolution of 3D elements of the game while UI and actual window size are left normal. So this helps low-end devices to enjoy the game and the game to be actually playable because UI text and other elements are still readable. Many games and game engines today have this feature and it can be done in Godot.
 
-This repository contains a small demo project which shows it in work and it could be used as starting point for your 3D game(although I don't recommend it).  
+This repository contains a small demo project which shows it in work and it could be used as starting point for your 3D game(although I don't recommend it). But i recommend to look at the [official implementation](https://godotengine.org/asset-library/asset/586).  
 
 ![scale (3)](https://user-images.githubusercontent.com/26604491/134802088-213b2120-3625-4ec7-8e81-e112ce86007c.gif)
 
