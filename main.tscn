@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://misc/Label.gd" type="Script" id=1]
+[ext_resource path="res://misc/HSlider.gd" type="Script" id=2]
+[ext_resource path="res://UIResize.gd" type="Script" id=3]
+[ext_resource path="res://misc/icon.png" type="Texture" id=4]
+[ext_resource path="res://ResolutionScaling.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="Animation" id=3]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[node name="Game" type="Spatial"]
+
+[node name="ResolutionScaling" parent="." instance=ExtResource( 5 )]
+
+[node name="MeshInstance" type="MeshInstance" parent="ResolutionScaling/Viewport" index="0"]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ResolutionScaling/Viewport/MeshInstance"]
+autoplay = "New Anim"
+playback_speed = 0.2
+"anims/New Anim" = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="ResolutionScaling/Viewport" index="1"]
+transform = Transform( 1, 0, 0, 0, 0.946356, 0.323125, 0, -0.323125, 0.946356, 0, 2.1233, 3.57447 )
+
+[node name="UI" type="Control" parent="."]
+margin_left = 0.749146
+margin_top = -1.0
+margin_right = 1024.75
+margin_bottom = 599.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI"]
+margin_left = 20.4811
+margin_top = 14.6295
+margin_right = 60.4811
+margin_bottom = 28.6295
+rect_scale = Vector2( 2, 2 )
+text = "FPS:"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UI"]
+margin_left = 18.8775
+margin_top = 68.9028
+margin_right = 58.8775
+margin_bottom = 82.9028
+text = "Resolution scale:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="UI"]
+margin_left = 17.0
+margin_top = 76.0
+margin_right = 179.0
+margin_bottom = 104.0
+value = 100.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="UI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -64.0
+margin_top = -64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite" parent="UI/Control"]
+position = Vector2( 32, 32 )
+texture = ExtResource( 4 )
+
+[node name="Control2" type="Control" parent="UI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -32.0
+margin_right = 32.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite" parent="UI/Control2"]
+position = Vector2( 32, 32 )
+texture = ExtResource( 4 )
+
+[connection signal="value_changed" from="UI/HSlider" to="UI/HSlider" method="on_scale_changed"]
+
+[editable path="ResolutionScaling"]
