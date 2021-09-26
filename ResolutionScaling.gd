@@ -2,6 +2,7 @@ extends ViewportContainer
 
 export(float) var scale = 1.0;
 onready var root = get_tree().get_root()
+onready var viewport = self.get_child(0)
 
 func _ready():
 	change_scale(scale)
@@ -9,11 +10,11 @@ func _ready():
 
 
 func _on_window_resize():
-	self.get_child(0).size = root.get_viewport().size * scale
+	viewport.size = root.get_viewport().size * scale
 
 
 func _change_size(size: Vector2):
-	self.get_child(0).size = size
+	viewport.size = size
 
 
 func change_scale(new_scale: float): # intended to be from 0 to 1, but can also be used for supersampling
